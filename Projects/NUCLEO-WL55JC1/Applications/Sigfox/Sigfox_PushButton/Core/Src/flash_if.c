@@ -248,7 +248,7 @@ static FLASH_IF_StatusTypedef FLASH_IF_INT_Write(void *pDestination, const void 
       for (page_index = start_page_index; page_index < (start_page_index + number_pages); page_index++)
       {
         page_address = page_index * FLASH_PAGE_SIZE + FLASH_BASE;
-        if (FLASH_IF_INT_IsEmpty(pDestination, length) != FLASH_IF_MEM_EMPTY)
+        if (FLASH_IF_INT_IsEmpty((void *)uDest, length) != FLASH_IF_MEM_EMPTY)
         {
           if (pAllocatedBuffer == NULL)
           {
@@ -272,6 +272,12 @@ static FLASH_IF_StatusTypedef FLASH_IF_INT_Write(void *pDestination, const void 
           current_dest = page_address;
           current_source = (uint32_t)pAllocatedBuffer;
           current_length = FLASH_PAGE_SIZE;
+
+          /* Unlock back the Flash */
+          if (HAL_OK != HAL_FLASH_Unlock())
+          {
+            ret_status = FLASH_IF_LOCK_ERROR;
+          }
         }
         else
         {
