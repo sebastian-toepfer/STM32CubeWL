@@ -498,6 +498,11 @@
               <FileType>1</FileType>
               <FilePath>../CM4/Core/Src/stm32wlxx_hal_msp.c</FilePath>
             </File>
+            <File>
+              <FileName>flash_if.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\CM4\Core\Src\flash_if.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

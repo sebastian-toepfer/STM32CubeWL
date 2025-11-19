@@ -22,7 +22,7 @@
 #include "platform.h"
 #include "sys_app.h"
 #include "lora_app.h"
-#include "cmsis_os.h"
+#include "cmsis_os2.h"
 #include "stm32_timer.h"
 #include "utilities_def.h"
 #include "app_version.h"
@@ -394,6 +394,11 @@ static UTIL_TIMER_Object_t RxLedTimer;
   */
 static UTIL_TIMER_Object_t JoinLedTimer;
 
+/**
+  * Temp buffer to store a FLASH page in RAM when partial replacement is needed
+  */
+static uint8_t FLASH_RAM_buffer[FLASH_IF_BUFFER_SIZE];
+
 /* USER CODE END PV */
 
 /* Exported functions ---------------------------------------------------------*/
@@ -446,7 +451,7 @@ void LoRaWAN_Init(void)
   UTIL_TIMER_Create(&RxLedTimer, LED_PERIOD_TIME, UTIL_TIMER_ONESHOT, OnRxTimerLedEvent, NULL);
   UTIL_TIMER_Create(&JoinLedTimer, LED_PERIOD_TIME, UTIL_TIMER_PERIODIC, OnJoinTimerLedEvent, NULL);
 
-  if (FLASH_IF_Init(NULL) != FLASH_IF_OK)
+  if (FLASH_IF_Init(FLASH_RAM_buffer) != FLASH_IF_OK)
   {
     Error_Handler();
   }
@@ -1110,11 +1115,8 @@ static void OnStoreContextRequest(void *nvm, uint32_t nvm_size)
   /* USER CODE BEGIN OnStoreContextRequest_1 */
 
   /* USER CODE END OnStoreContextRequest_1 */
-  /* store nvm in flash */
-  if (FLASH_IF_Erase(LORAWAN_NVM_BASE_ADDRESS, FLASH_PAGE_SIZE) == FLASH_IF_OK)
-  {
-    FLASH_IF_Write(LORAWAN_NVM_BASE_ADDRESS, (const void *)nvm, nvm_size);
-  }
+  FLASH_IF_Write(LORAWAN_NVM_BASE_ADDRESS, (const void *)nvm, nvm_size);
+
   /* USER CODE BEGIN OnStoreContextRequest_Last */
 
   /* USER CODE END OnStoreContextRequest_Last */

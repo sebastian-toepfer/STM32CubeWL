@@ -16,7 +16,7 @@
         <TargetCommonOption>
           <Device>STM32WL55JCIx:CM4</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32WLxx_DFP.1.1.1</PackID>
+          <PackID>Keil.STM32WLxx_DFP.1.1.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000-0x20003FFF) IRAM2(0x20008000-0x2000BFFF) IROM(0x8000000-0x801FFFF) CLOCK(12000000) CPUTYPE("Cortex-M4") TZ</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -502,6 +502,11 @@
               <FileName>stm32wlxx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>../CM4/Core/Src/stm32wlxx_hal_msp.c</FilePath>
+            </File>
+            <File>
+              <FileName>flash_if.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\CM4\Core\Src\flash_if.c</FilePath>
             </File>
           </Files>
         </Group>

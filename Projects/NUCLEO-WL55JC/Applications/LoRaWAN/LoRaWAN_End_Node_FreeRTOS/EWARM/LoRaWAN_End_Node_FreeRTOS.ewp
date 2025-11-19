@@ -347,7 +347,6 @@
                     <state>$PROJ_DIR$/../../../../../../Utilities/timer</state>
                     <state>$PROJ_DIR$/../../../../../../Utilities/lpm/tiny_lpm</state>
                     <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/FreeRTOS/Source/include</state>
-                    <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2</state>
                     <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/FreeRTOS/Source/portable/IAR/ARM_CM3</state>
                     <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/LoRaWAN/LmHandler/Packages</state>
                     <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Device/ST/STM32WLxx/Include</state>
@@ -360,6 +359,7 @@
                     <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/SubGHz_Phy/stm32_radio_driver</state>
                     <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Include</state>
                     <state>$PROJ_DIR$/../../../../../../Drivers/BSP/STM32WLxx_Nucleo</state>
+                    <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/RTOS2/Include</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>

@@ -62,6 +62,7 @@
   */
 void HAL_MspInit(void)
 {
+
   /* USER CODE BEGIN MspInit 0 */
 
   /* USER CODE END MspInit 0 */
@@ -74,17 +75,17 @@ void HAL_MspInit(void)
 }
 
 /**
-* @brief ADC MSP Initialization
-* This function configures the hardware resources used in this example
-* @param hadc: ADC handle pointer
-* @retval None
-*/
+  * @brief ADC MSP Initialization
+  * This function configures the hardware resources used in this example
+  * @param hadc: ADC handle pointer
+  * @retval None
+  */
 void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   if(hadc->Instance==ADC)
   {
-  /* USER CODE BEGIN ADC_MspInit 0 */
+    /* USER CODE BEGIN ADC_MspInit 0 */
   /* Note: In case of usage of asynchronous clock for ADC, with ADC setting   */
   /*       "AdcHandle.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIVx",            */
   /*       the clock source has to be enabled at RCC top level using function */
@@ -98,7 +99,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
   HAL_NVIC_SetPriority(ADCx_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(ADCx_IRQn);
 
-  /* USER CODE END ADC_MspInit 0 */
+    /* USER CODE END ADC_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_ADC_CLK_ENABLE();
 
@@ -114,26 +115,27 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     /* ADC interrupt Init */
     HAL_NVIC_SetPriority(ADC_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(ADC_IRQn);
-  /* USER CODE BEGIN ADC_MspInit 1 */
+    /* USER CODE BEGIN ADC_MspInit 1 */
 
-  /* USER CODE END ADC_MspInit 1 */
+    /* USER CODE END ADC_MspInit 1 */
+
   }
 
 }
 
 /**
-* @brief ADC MSP De-Initialization
-* This function freeze the hardware resources used in this example
-* @param hadc: ADC handle pointer
-* @retval None
-*/
+  * @brief ADC MSP De-Initialization
+  * This function freeze the hardware resources used in this example
+  * @param hadc: ADC handle pointer
+  * @retval None
+  */
 void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
 {
   if(hadc->Instance==ADC)
   {
-  /* USER CODE BEGIN ADC_MspDeInit 0 */
+    /* USER CODE BEGIN ADC_MspDeInit 0 */
 
-  /* USER CODE END ADC_MspDeInit 0 */
+    /* USER CODE END ADC_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_ADC_CLK_DISABLE();
 
@@ -144,27 +146,27 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
 
     /* ADC interrupt DeInit */
     HAL_NVIC_DisableIRQ(ADC_IRQn);
-  /* USER CODE BEGIN ADC_MspDeInit 1 */
+    /* USER CODE BEGIN ADC_MspDeInit 1 */
 
-  /* USER CODE END ADC_MspDeInit 1 */
+    /* USER CODE END ADC_MspDeInit 1 */
   }
 
 }
 
 /**
-* @brief DAC MSP Initialization
-* This function configures the hardware resources used in this example
-* @param hdac: DAC handle pointer
-* @retval None
-*/
+  * @brief DAC MSP Initialization
+  * This function configures the hardware resources used in this example
+  * @param hdac: DAC handle pointer
+  * @retval None
+  */
 void HAL_DAC_MspInit(DAC_HandleTypeDef* hdac)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   if(hdac->Instance==DAC)
   {
-  /* USER CODE BEGIN DAC_MspInit 0 */
+    /* USER CODE BEGIN DAC_MspInit 0 */
 
-  /* USER CODE END DAC_MspInit 0 */
+    /* USER CODE END DAC_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_DAC_CLK_ENABLE();
 
@@ -177,26 +179,27 @@ void HAL_DAC_MspInit(DAC_HandleTypeDef* hdac)
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /* USER CODE BEGIN DAC_MspInit 1 */
+    /* USER CODE BEGIN DAC_MspInit 1 */
 
-  /* USER CODE END DAC_MspInit 1 */
+    /* USER CODE END DAC_MspInit 1 */
+
   }
 
 }
 
 /**
-* @brief DAC MSP De-Initialization
-* This function freeze the hardware resources used in this example
-* @param hdac: DAC handle pointer
-* @retval None
-*/
+  * @brief DAC MSP De-Initialization
+  * This function freeze the hardware resources used in this example
+  * @param hdac: DAC handle pointer
+  * @retval None
+  */
 void HAL_DAC_MspDeInit(DAC_HandleTypeDef* hdac)
 {
   if(hdac->Instance==DAC)
   {
-  /* USER CODE BEGIN DAC_MspDeInit 0 */
+    /* USER CODE BEGIN DAC_MspDeInit 0 */
 
-  /* USER CODE END DAC_MspDeInit 0 */
+    /* USER CODE END DAC_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_DAC_CLK_DISABLE();
 
@@ -205,9 +208,9 @@ void HAL_DAC_MspDeInit(DAC_HandleTypeDef* hdac)
     */
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_10);
 
-  /* USER CODE BEGIN DAC_MspDeInit 1 */
+    /* USER CODE BEGIN DAC_MspDeInit 1 */
 
-  /* USER CODE END DAC_MspDeInit 1 */
+    /* USER CODE END DAC_MspDeInit 1 */
   }
 
 }

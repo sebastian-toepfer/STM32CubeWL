@@ -80,6 +80,7 @@ void Simplex_Send_callback(struct __IPCC_HandleTypeDef *hipcc, uint32_t ChannelI
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
   HAL_StatusTypeDef err = HAL_OK;
   uint32_t ChannelId = 0; /* This parameter can take any value between 0 and (IPCC_CHANNEL_NUMBER-1) */
@@ -108,7 +109,7 @@ int main(void)
   SystemClock_Config();
 
   /* IPCC initialisation */
-   MX_IPCC_Init();
+  MX_IPCC_Init();
 
   /* USER CODE BEGIN SysInit */
  
@@ -214,6 +215,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
   /** Configure the SYSCLKSource, HCLK, PCLK1 and PCLK2 clocks dividers
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK3|RCC_CLOCKTYPE_HCLK2
@@ -279,8 +281,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.

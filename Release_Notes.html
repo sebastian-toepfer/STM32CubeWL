@@ -129,11 +129,500 @@ href="https://www.st.com/resource/en/user_manual/DM00105262.pdf">UM1722</a>
 <section id="update-history" class="col-sm-12 col-lg-8">
 <h1>Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section5" checked aria-hidden="true">
+<input type="checkbox" id="collapse-section6" checked aria-hidden="true">
+<label for="collapse-section6" aria-hidden="true"><strong>V1.4.0 /
+29-October-2025</strong></label>
+<div>
+<h2 id="main-changes">Main Changes</h2>
+<h3 id="maintenance-release-of-stm32cubewl-mcu-package">Maintenance
+release of <strong>STM32CubeWL</strong> MCU package</h3>
+<p>In the STM32CubeWL MCU Package, example and application projects are
+generated with the STM32CubeMX tool to initialize the system,
+peripherals, and middleware stacks.<br />
+Users can open the provided IOC file in STM32CubeMX to modify the
+settings, add additional peripherals and/or middleware, and build their
+final application.</p>
+<h3 id="middleware-updates"><strong>Middleware</strong> updates</h3>
+<ul>
+<li>SLA0044 Legal terms updated to latest revision (Rev 6 / October
+2025)</li>
+<li>Migrate to MbedTLS V3.6.4</li>
+<li>Migrate to STM32 Key Management Services V1.2.3</li>
+<li>Migrate to FreeRTOS V10.6.2</li>
+<li>Migrate to LoRaWAN V2.6.2</li>
+<li>Migrate to STM32_Secure_Engine V2.5.4</li>
+</ul>
+<h3 id="projects-updates"><strong>Projects</strong> updates</h3>
+<ul>
+<li>SLA0044 Legal terms updated to latest revision (Rev 6 / October
+2025)<br />
+</li>
+<li>Project alignment to STM32CubeMX V6.16.0<br />
+</li>
+<li>Project alignment to updated FreeRTOS and MbedTLS versions<br />
+</li>
+<li>Bug fixes</li>
+</ul>
+<h3 id="halll-drivers-updates"><strong>HAL/LL Drivers</strong>
+updates</h3>
+<ul>
+<li>Fix of MISRAC2012 Rules 13.4_b, 12.3, 10.4 and 8.13 violations</li>
+</ul>
+<h3 id="package-updates"><strong>Package</strong> updates</h3>
+<ul>
+<li>SLA0048 Legal terms updated to latest revision (Rev 5 / October
+2025)</li>
+</ul>
+<p><br />
+</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><strong>CMSIS Device Drivers</strong> updates
+<ul>
+<li>Update STM32CubeIDE projects to fix the location of the
+<code>.size</code> directive in startup code<br />
+</li>
+<li>Change ROM symbol addresses in <code>*_sram_*.icf</code> template
+files to use code region aliases</li>
+<li>Allow redefinition of the macro <code>VECT_TAB_OFFSET</code>
+externally from the IDE, makefile, or command line</li>
+</ul></li>
+<li><strong>HAL/LL Drivers</strong> updates
+<ul>
+<li>Update HAL/LL drivers with the latest corrections, including the
+following IP drivers:
+<ul>
+<li>ADC, RCC, HSEM, I2C, SUBGHZ, RTC, TIM, LPTIM, UART, USART, FLASH,
+SPI, DMA</li>
+</ul></li>
+<li>Refer to <a
+href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32wlxx-hal-driver/blob/main/Release_Notes.html">release notes</a>
+for further details</li>
+</ul></li>
+<li><strong>BSP Drivers</strong> updates
+<ul>
+<li>stts22h updated to V1.4.0</li>
+<li>ism330dhcx updated to V1.3.0</li>
+<li>iis2mdc updated to V1.3.0</li>
+<li>ilps22qs updated to V1.1.0</li>
+</ul></li>
+<li><strong>Middlewares</strong> updates
+<ul>
+<li>Update LoRaWAN middlewares to include latest corrections
+<ul>
+<li>Refer to LoRaWAN <a
+href="Middlewares/Third_Party/LoRaWAN/Release_Notes.html">ST release
+notes</a> for further details</li>
+</ul></li>
+<li>Migrate to MbedTLS V3.6.4
+<ul>
+<li>Refer to MbedTLS <a
+href="Middlewares/Third_Party/mbed-crypto/st_readme.txt">ST release
+notes</a> for further details</li>
+</ul></li>
+<li>Migrate to STM32 Key Management Services V1.2.3
+<ul>
+<li>Refer to <a
+href="Middlewares/ST/STM32_Key_Management_Services/Release_Notes.html">release
+notes</a> for further details</li>
+</ul></li>
+<li>Migrate to FreeRTOS V10.6.2
+<ul>
+<li>Refer to FreeRTOS <a
+href="Middlewares/Third_Party/FreeRTOS/Source/st_readme.txt">ST release
+notes</a> for further details</li>
+</ul></li>
+<li>Migrate to STM32_Secure_Engine V2.5.4
+<ul>
+<li>Refer to <a
+href="Middlewares/ST/STM32_Secure_Engine/Release_Notes.html">release
+notes</a> for further details</li>
+</ul></li>
+</ul></li>
+<li><strong>Projects</strong> updates
+<ul>
+<li>Adapt LoRaWAN projects to MbedTLS V3.6.4</li>
+<li>Adapt Sigfox projects to MbedTLS V3.6.4</li>
+<li>Adapt LoRaWAN FreeRTOS-based projects to FreeRTOS V10.6.2</li>
+<li>Various bug fixes in LoRaWAN applications</li>
+<li>Align LoRaWAN projects to STM32CubeMX V6.16.0</li>
+<li>Align Sigfox projects to STM32CubeMX V6.16.0</li>
+<li>Align example projects to STM32CubeMX V6.16.0</li>
+<li>Align KMS projects to MbedTLS V3.6.4</li>
+<li>Resolve compilation warnings in various projects when using newer
+GCC versions
+<ul>
+<li>Refer to <a href="Projects/Release_Notes.html">release notes</a> for
+further details</li>
+</ul></li>
+</ul></li>
+<li><strong>Utilities</strong> updates
+<ul>
+<li>timer updated to V1.3.0</li>
+<li>misc updated to V1.1.2</li>
+</ul></li>
+</ul>
+<p><br />
+</p>
+<h2 id="projects">Projects</h2>
+<ul>
+<li>The STM32CubeWL Firmware package comes with a rich set of examples
+running on STMicroelectronics boards, organized by board and provided
+with preconfigured projects for the main supported toolchains.<br />
+</li>
+<li>The exhaustive list of projects and their short descriptions is
+provided in this table: <a
+href="Projects/STM32CubeProjectsList.html">STM32CubeProjectsList.html</a><br />
+</li>
+<li>The STM32CubeWL Firmware offers a comprehensive set of targeted
+Examples &amp; Applications developed using STM32CubeMX and ported
+across three supported toolchains.</li>
+</ul>
+<p><br />
+</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Version</th>
+<th style="text-align: left;">Release notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Projects</td>
+<td>V1.4.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Projects/Release_Notes.html">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="components">Components</h2>
+<p><small>The components flagged by “<span
+class="icon-st-update"></span>” have changed since the previous release.
+“<span class="icon-st-add"></span>” are new.</small></p>
+<p><br />
+</p>
+<p><strong>Drivers</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th>Version</th>
+<th>Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CMSIS</td>
+<td>V5.6.0_cm4</td>
+<td><a href="Drivers/CMSIS/README.md">release notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">STM32WL CMSIS</td>
+<td>V1.3.0 <span class="icon-st-update"></span></td>
+<td><a
+href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/cmsis-device-wl/blob/main/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">STM32WLxx_HAL_Driver</td>
+<td>V1.4.0 <span class="icon-st-update"></span></td>
+<td><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32wlxx-hal-driver/blob/main/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">STM32WLxx_Nucleo</td>
+<td>V1.3.1</td>
+<td><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32wlxx-nucleo-bsp/blob/main/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">B-WL5M-SUBG</td>
+<td>V1.0.0</td>
+<td><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/b-wl5m-subg1-bsp/blob/main/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">BSP Common</td>
+<td>V7.2.1</td>
+<td><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-bsp-common/blob/v7.2.1/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">BSP stts22h</td>
+<td>V1.4.0 <span class="icon-st-update"></span></td>
+<td><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-stts22h/blob/v1.3.0/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">BSP ism330dhcx</td>
+<td>V1.3.0 <span class="icon-st-update"></span></td>
+<td><a
+href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-ism330dhcx/blob/v1.2.2/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">BSP iis2mdc</td>
+<td>V1.3.0 <span class="icon-st-update"></span></td>
+<td><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-iis2mdc/blob/v1.3.0/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">BSP ilps22qs</td>
+<td>V1.1.0 <span class="icon-st-update"></span></td>
+<td><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-ilps22qs/blob/v1.0.0/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">BSP mx25l4006</td>
+<td>V1.0.0</td>
+<td><a
+href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32-mx25l4006/blob/v1.0.0/Release_Notes.html">release
+notes</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p><strong>Middlewares</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th>Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">FatFS</td>
+<td style="text-align: left;">R0.12c</td>
+<td><a href="Middlewares/Third_Party/FatFs/doc/updates.txt">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ST modified 20191011</td>
+<td><a href="Middlewares/Third_Party/FatFs/src/st_readme.txt">ST release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">FreeRTOS</td>
+<td style="text-align: left;">V10.6.2 <span
+class="icon-st-update"></span></td>
+<td><a href="Middlewares/Third_Party/FreeRTOS/Source/readme.txt">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ST modified 20241011</td>
+<td><a href="Middlewares/Third_Party/FreeRTOS/Source/st_readme.txt">ST
+release notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">LoRaWAN</td>
+<td style="text-align: left;">V4.7.0</td>
+<td><a href="Middlewares/Third_Party/LoRaWAN/readme.md">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">V2.6.2 <span
+class="icon-st-update"></span></td>
+<td><a href="Middlewares/Third_Party/LoRaWAN/Release_Notes.html">ST
+release notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">SubGHz_Phy</td>
+<td style="text-align: left;">V1.3.1</td>
+<td><a
+href="Middlewares/Third_Party/SubGHz_Phy/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Sigfox</td>
+<td style="text-align: left;">V1.9.0 <span
+class="icon-st-update"></span></td>
+<td><a href="Middlewares/Third_Party/Sigfox/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">STM32_Key_Management_Services</td>
+<td style="text-align: left;">V1.2.3 <span
+class="icon-st-update"></span></td>
+<td><a
+href="Middlewares/ST/STM32_Key_Management_Services/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">STM32_Secure_Engine</td>
+<td style="text-align: left;">V2.5.4 <span
+class="icon-st-update"></span></td>
+<td><a
+href="Middlewares/ST/STM32_Secure_Engine/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">mbed-crypto</td>
+<td style="text-align: left;">V3.6.4 <span
+class="icon-st-update"></span></td>
+<td><a href="Middlewares/Third_Party/mbed-crypto/README.md">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ST modified 20250701</td>
+<td><a href="Middlewares/Third_Party/mbed-crypto/st_readme.txt">ST
+release notes</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p><strong>Utilities</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th>Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">conf</td>
+<td style="text-align: left;">V1.6.0</td>
+<td><a href="Utilities/conf/Release_Notes.html">release notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">lcd</td>
+<td style="text-align: left;">V2.0.1</td>
+<td><a href="Utilities/lcd/Release_Notes.html">release notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Fonts</td>
+<td style="text-align: left;">V2.0.1</td>
+<td><a href="Utilities/Fonts/Release_Notes.html">release notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">tiny_lpm</td>
+<td style="text-align: left;">V1.4.2</td>
+<td><a href="Utilities/lpm/tiny_lpm/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">sequencer</td>
+<td style="text-align: left;">V1.6.0</td>
+<td><a href="Utilities/sequencer/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">adv_trace</td>
+<td style="text-align: left;">V1.3.0</td>
+<td><a href="Utilities/trace/adv_trace/Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">timer</td>
+<td style="text-align: left;">V1.3.0 <span
+class="icon-st-update"></span></td>
+<td><a href="Utilities/timer/Release_Notes.html">release notes</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">misc</td>
+<td style="text-align: left;">V1.1.2 <span
+class="icon-st-update"></span></td>
+<td><a href="Utilities/misc/Release_Notes.html">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and
+Compilers</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Toolchain + ST-Link</th>
+<th>Version</th>
+<th style="text-align: left;">Patch (if available)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">IAR Embedded Workbench for ARM
+(EWARM)</td>
+<td>V9.20.1</td>
+<td style="text-align: left;"><a
+href="Utilities/PC_Software/EWARMv8_STM32WLxx_V4.9_Signed.zip">Patch
+EWARM</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">RealView Microcontroller Development Kit
+(MDK-ARM)</td>
+<td>V5.36</td>
+<td style="text-align: left;"><a
+href="Utilities/PC_Software/Keil.STM32WLxx_DFP.1.1.1.zip">Patch
+MDK-ARM</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">STM32CubeIDE (GNU Tools for STM32
+10.3-2021.10)</td>
+<td>V1.11.0</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">STM32CubeProgrammer</td>
+<td>V2.12.0</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Support of ARM Compiler 6 (AC-5 like warnings) for HAL/LL/BSP
+drivers and STMicroelectronics Middleware components</li>
+</ul>
+<p><br />
+</p>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>Projects: Few projects not available at CubeMx format (with .ioc) as
+not eligible (due to CubeMx limitations)</li>
+<li>The Low Power mode is disabled in the
+LoRaWAN_FUOTA_DualCore_ExtFlash and LoRaWAN_SBSFU_1_Slot_DualCore due to
+NVM Secure Storage feature with HAL_RNG limitations</li>
+<li>SBSFU_2_Slots_DualCore and SBSFU_1_Slot_DualCore requires IAR EWARM
+version greater or equal to V9.30.1 to be built due to flash size
+constraints</li>
+</ul>
+<p><br />
+</p>
+<h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
+<ul>
+<li>STM32WLE5xx, STM32WLE4xx, STM32WL54xx, STM32WL55xx &amp;
+STM32WL5MOCHxx devices</li>
+<li>NUCLEO-WL55JC1 &amp; NUCLEO-WL55JC2 (except Sigfox applications)
+ecosystem boards - Nucleo kit RevC (MB1389-HIGHBAND-E02 or
+MB1389-LOWBAND-E02)</li>
+<li>B-WL5M-SUBG1 ecosystem boards (MB1779-HIGHBAND-A01)</li>
+</ul>
+<p><br />
+</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>STM32CubeMX 6.16.0</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section5" aria-hidden="true">
 <label for="collapse-section5" aria-hidden="true"><strong>V1.3.1 /
 20-December-2024</strong></label>
 <div>
-<h2 id="main-changes">Main Changes</h2>
+<h2 id="main-changes-1">Main Changes</h2>
 <h3 id="patch-release-of-stm32cubewl-mcu-package">Patch release of
 <strong>STM32CubeWL</strong> MCU package</h3>
 <p>In the STM32CubeWL MCU Package, examples and applications projects
@@ -141,7 +630,7 @@ are generated with the STM32CubeMX tool to initialize the system,
 peripherals and middleware stacks. User can open the provided ioc file
 in STM32CubeMX to modify the settings, add additional peripherals and/or
 middleware, to build his final application.</p>
-<h3 id="middleware-updates"><strong>Middleware</strong> updates</h3>
+<h3 id="middleware-updates-1"><strong>Middleware</strong> updates</h3>
 <ul>
 <li>Integration of LoRaWAN Link Layer v1.0.4/v1.1 + Regional Parameters
 RP002-1.0.3</li>
@@ -151,7 +640,7 @@ region</li>
 </ul>
 <p><br />
 </p>
-<h2 id="contents">Contents</h2>
+<h2 id="contents-1">Contents</h2>
 <ul>
 <li><strong>HAL/LL Drivers</strong> updates
 <ul>
@@ -197,7 +686,7 @@ further details</li>
 </ul>
 <p><br />
 </p>
-<h2 id="projects">Projects</h2>
+<h2 id="projects-1">Projects</h2>
 <ul>
 <li>The STM32CubeWL Firmware package comes with a rich set of examples
 running on STMicroelectronics boards, organized by board and provided
@@ -230,7 +719,7 @@ href="Projects/Release_Notes.html">release notes</a></td>
 </table>
 <p><br />
 </p>
-<h2 id="components">Components</h2>
+<h2 id="components-1">Components</h2>
 <p><small>The components flagged by “<span
 class="icon-st-update"></span>” have changed since the previous release.
 “<span class="icon-st-add"></span>” are new.</small></p>
@@ -266,7 +755,7 @@ notes</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">STM32WLxx_Nucleo</td>
-<td>V1.3.1 <span class="icon-st-update"></span></td>
+<td>V1.3.1</td>
 <td><a href="https://htmlpreview.github.io/?https://github.com/STMicroelectronics/stm32wlxx-nucleo-bsp/blob/main/Release_Notes.html">release
 notes</a></td>
 </tr>
@@ -467,8 +956,8 @@ notes</a></td>
 </table>
 <p><br />
 </p>
-<h2 id="development-toolchains-and-compilers">Development Toolchains and
-Compilers</h2>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains
+and Compilers</h2>
 <table>
 <thead>
 <tr>
@@ -513,7 +1002,7 @@ drivers and STMicroelectronics Middleware components</li>
 </ul>
 <p><br />
 </p>
-<h2 id="known-limitations">Known Limitations</h2>
+<h2 id="known-limitations-1">Known Limitations</h2>
 <ul>
 <li>Projects: Few projects not available at CubeMx format (with .ioc) as
 not eligible (due to CubeMx limitations)</li>
@@ -525,7 +1014,8 @@ NVM Secure Storage feature with HAL_RNG limitations</li>
 </ul>
 <p><br />
 </p>
-<h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
+<h2 id="supported-devices-and-boards-1">Supported Devices and
+Boards</h2>
 <ul>
 <li>STM32WLE5xx, STM32WLE4xx, STM32WL54xx, STM32WL55xx &amp;
 STM32WL5MOCHxx devices</li>
@@ -536,7 +1026,7 @@ MB1389-LOWBAND-E02)</li>
 </ul>
 <p><br />
 </p>
-<h2 id="dependencies">Dependencies</h2>
+<h2 id="dependencies-1">Dependencies</h2>
 <ul>
 <li>STM32CubeMX 6.7.0</li>
 </ul>
@@ -547,8 +1037,8 @@ MB1389-LOWBAND-E02)</li>
 <label for="collapse-section4" aria-hidden="true"><strong>V1.3.0 /
 09-November-2022</strong></label>
 <div>
-<h2 id="main-changes-1">Main Changes</h2>
-<h3 id="maintenance-release-of-stm32cubewl-mcu-package">Maintenance
+<h2 id="main-changes-2">Main Changes</h2>
+<h3 id="maintenance-release-of-stm32cubewl-mcu-package-1">Maintenance
 release of <strong>STM32CubeWL</strong> MCU package</h3>
 <p>In the STM32CubeWL MCU Package, examples and applications projects
 are generated with the STM32CubeMX tool to initialize the system,
@@ -568,7 +1058,7 @@ case</li>
 Volatile Memory (NVM)</li>
 <li>KMS: Allow dynamic ID objects to be stored in NVM or VM (RAM)</li>
 </ul>
-<h2 id="contents-1">Contents</h2>
+<h2 id="contents-2">Contents</h2>
 <ul>
 <li><strong>CMSIS Device</strong> updates
 <ul>
@@ -643,7 +1133,7 @@ href="Projects/Release_Notes.html">release notes</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="components-1">Components</h2>
+<h2 id="components-2">Components</h2>
 <p><small>The components flagged by “<span
 class="icon-st-update"></span>” have changed since the previous release.
 “<span class="icon-st-add"></span>” are new.</small></p>
@@ -658,7 +1148,7 @@ class="icon-st-update"></span>” have changed since the previous release.
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Cortex-M CMSIS</td>
+<td style="text-align: left;">CMSIS</td>
 <td>V5.6.0_cm4</td>
 <td><a href="Drivers/CMSIS/README.md">release notes</a></td>
 </tr>
@@ -877,7 +1367,7 @@ class="icon-st-update"></span></td>
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-1">Known Limitations</h2>
+<h2 id="known-limitations-2">Known Limitations</h2>
 <ul>
 <li>Projects: Few projects not available at CubeMx format (with .ioc) as
 not eligible (due to CubeMx limitations)</li>
@@ -885,7 +1375,7 @@ not eligible (due to CubeMx limitations)</li>
 LoRaWAN_FUOTA_DualCore_ExtFlash and LoRaWAN_SBSFU_1_Slot_DualCore due to
 NVM Secure Storage feature with HAL_RNG limitations</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-1">Development Toolchains
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains
 and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1 + <a
@@ -901,7 +1391,7 @@ drivers and STMicroelectronics Middleware components</li>
 <li>STM32CubeIDE 1.11.0 (GNU Tools for STM32 10.3-2021.10)</li>
 <li>STM32CubeProgrammer 2.12.0</li>
 </ul>
-<h2 id="supported-devices-and-boards-1">Supported Devices and
+<h2 id="supported-devices-and-boards-2">Supported Devices and
 Boards</h2>
 <ul>
 <li>STM32WLE5xx, STM32WLE4xx, STM32WL54xx, STM32WL55xx &amp;
@@ -911,7 +1401,7 @@ ecosystem boards - Nucleo kit RevC (MB1389-HIGHBAND-E02 or
 MB1389-LOWBAND-E02)</li>
 <li>B-WL5M-SUBG1 ecosystem boards (MB1779-HIGHBAND-A01)</li>
 </ul>
-<h2 id="dependencies-1">Dependencies</h2>
+<h2 id="dependencies-2">Dependencies</h2>
 <ul>
 <li>STM32CubeMX 6.7.0</li>
 </ul>
@@ -922,15 +1412,15 @@ MB1389-LOWBAND-E02)</li>
 <label for="collapse-section3" aria-hidden="true"><strong>V1.2.0 /
 04-February-2022</strong></label>
 <div>
-<h2 id="main-changes-2">Main Changes</h2>
-<h3 id="maintenance-release-of-stm32cubewl-mcu-package-1">Maintenance
+<h2 id="main-changes-3">Main Changes</h2>
+<h3 id="maintenance-release-of-stm32cubewl-mcu-package-2">Maintenance
 release of <strong>STM32CubeWL</strong> MCU package</h3>
 <p>In the STM32CubeWL MCU Package, examples and applications projects
 are generated with the STM32CubeMX tool to initialize the system,
 peripherals and middleware stacks. User can open the provided ioc file
 in STM32CubeMX to modify the settings, add additional peripherals and/or
 middleware, to build his final application.</p>
-<h2 id="contents-2">Contents</h2>
+<h2 id="contents-3">Contents</h2>
 <ul>
 <li><strong>General</strong> updates
 <ul>
@@ -998,7 +1488,7 @@ href="Projects/Release_Notes.html">release notes</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="components-2">Components</h2>
+<h2 id="components-3">Components</h2>
 <p><small>The components flagged by “<span
 class="icon-st-update"></span>” have changed since the previous release.
 “<span class="icon-st-add"></span>” are new.</small></p>
@@ -1192,12 +1682,12 @@ class="icon-st-update"></span></td>
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-2">Known Limitations</h2>
+<h2 id="known-limitations-3">Known Limitations</h2>
 <ul>
 <li>Projects: Few projects not available at CubeMx format (with .ioc) as
 not eligible (due to CubeMx limitations)</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-2">Development Toolchains
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains
 and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.30.1 + <a
@@ -1212,7 +1702,7 @@ drivers and STMicroelectronics Middleware components</li>
 9-2020-q2-update)</li>
 <li>STM32CubeProgrammer 2.9.0</li>
 </ul>
-<h2 id="supported-devices-and-boards-2">Supported Devices and
+<h2 id="supported-devices-and-boards-3">Supported Devices and
 Boards</h2>
 <ul>
 <li>STM32WLE5xx, STM32WLE4xx, STM32WL54xx &amp; STM32WL55xx devices</li>
@@ -1222,7 +1712,7 @@ MB1389-LOWBAND-E02)</li>
 </ul>
 <h2 id="backward-compatibility">Backward Compatibility</h2>
 <p>SBSFU appli not compatible with CubeIDE v1.8</p>
-<h2 id="dependencies-2">Dependencies</h2>
+<h2 id="dependencies-3">Dependencies</h2>
 <ul>
 <li>STM32CubeMX 6.5.0</li>
 </ul>
@@ -1233,15 +1723,15 @@ MB1389-LOWBAND-E02)</li>
 <label for="collapse-section2" aria-hidden="true"><strong>V1.1.0 /
 16-June-2021</strong></label>
 <div>
-<h2 id="main-changes-3">Main Changes</h2>
-<h3 id="maintenance-release-of-stm32cubewl-mcu-package-2">Maintenance
+<h2 id="main-changes-4">Main Changes</h2>
+<h3 id="maintenance-release-of-stm32cubewl-mcu-package-3">Maintenance
 release of <strong>STM32CubeWL</strong> MCU package</h3>
 <p>In the STM32CubeWL MCU Package, examples and applications projects
 are generated with the STM32CubeMX tool to initialize the system,
 peripherals and middleware stacks. User can open the provided ioc file
 in STM32CubeMX to modify the settings, add additional peripherals and/or
 middleware, to build his final application.</p>
-<h2 id="contents-3">Contents</h2>
+<h2 id="contents-4">Contents</h2>
 <ul>
 <li><strong>CMSIS Device</strong> updates
 <ul>
@@ -1336,7 +1826,7 @@ href="Projects/Release_Notes.html">release notes</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="components-3">Components</h2>
+<h2 id="components-4">Components</h2>
 <p><small>The components flagged by “<span
 class="icon-st-update"></span>” have changed since the previous release.
 “<span class="icon-st-add"></span>” are new.</small></p>
@@ -1526,12 +2016,12 @@ class="icon-st-update"></span></td>
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-3">Known Limitations</h2>
+<h2 id="known-limitations-4">Known Limitations</h2>
 <ul>
 <li>Projects: Few projects not available at CubeMx format (with .ioc) as
 not eligible (due to CubeMx limitations)</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-3">Development Toolchains
+<h2 id="development-toolchains-and-compilers-4">Development Toolchains
 and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.30.1 + <a
@@ -1545,7 +2035,7 @@ drivers and STMicroelectronics Middleware components</li>
 </ul></li>
 <li>STM32CubeIDE 1.7.0 + ST-Link</li>
 </ul>
-<h2 id="supported-devices-and-boards-3">Supported Devices and
+<h2 id="supported-devices-and-boards-4">Supported Devices and
 Boards</h2>
 <ul>
 <li>STM32WLE5xx, STM32WLE4xx, STM32WL54xx &amp; STM32WL55xx devices</li>
@@ -1555,7 +2045,7 @@ MB1389-LOWBAND-E02)</li>
 </ul>
 <h2 id="backward-compatibility-1">Backward Compatibility</h2>
 <p>Not applicable</p>
-<h2 id="dependencies-3">Dependencies</h2>
+<h2 id="dependencies-4">Dependencies</h2>
 <ul>
 <li>STM32CubeMX 6.3.0</li>
 </ul>
@@ -1566,14 +2056,14 @@ MB1389-LOWBAND-E02)</li>
 <label for="collapse-section1" aria-hidden="true"><strong>V1.0.0 /
 28-October-2020</strong></label>
 <div>
-<h2 id="main-changes-4">Main Changes</h2>
+<h2 id="main-changes-5">Main Changes</h2>
 <p><strong>First Official Release</strong></p>
 <p>In the STM32CubeWL MCU Package, examples and applications projects
 are generated with the STM32CubeMX tool to initialize the system,
 peripherals and middleware stacks. User can open the provided ioc file
 in STM32CubeMX to modify the settings, add additional peripherals and/or
 middleware, to build his final application.</p>
-<h2 id="contents-4">Contents</h2>
+<h2 id="contents-5">Contents</h2>
 <ul>
 <li><strong>Projects</strong> updates
 <ul>
@@ -1604,7 +2094,7 @@ href="Projects/Release_Notes.html">release notes</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="components-4">Components</h2>
+<h2 id="components-5">Components</h2>
 <p><small>The components flagged by “<span
 class="icon-st-update"></span>” have changed since the previous release.
 “<span class="icon-st-add"></span>” are new.</small></p>
@@ -1786,13 +2276,13 @@ notes</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-4">Known Limitations</h2>
+<h2 id="known-limitations-5">Known Limitations</h2>
 <ul>
 <li>Projects: Few projects not available at CubeMx format (with .ioc) as
 not eligible (due to CubeMx limitations)</li>
 <li>Projects: LoRaWAN_FUOTA application not ported on CubeIDE</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-4">Development Toolchains
+<h2 id="development-toolchains-and-compilers-5">Development Toolchains
 and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V8.30.1 + <a
@@ -1803,7 +2293,7 @@ EWARM</a> + ST-Link</li>
 MDK-ARM</a> + ST-Link</li>
 <li>STM32CubeIDE 1.5.0 + ST-Link</li>
 </ul>
-<h2 id="supported-devices-and-boards-4">Supported Devices and
+<h2 id="supported-devices-and-boards-5">Supported Devices and
 Boards</h2>
 <ul>
 <li>STM32WLE5xx, STM32WLE4xx, STM32WL54xx &amp; STM32WL55xx devices</li>
@@ -1813,7 +2303,7 @@ MB1389-LOWBAND-C01)</li>
 </ul>
 <h2 id="backward-compatibility-2">Backward Compatibility</h2>
 <p>Not applicable</p>
-<h2 id="dependencies-4">Dependencies</h2>
+<h2 id="dependencies-5">Dependencies</h2>
 <ul>
 <li>STM32CubeMX 6.1.0</li>
 </ul>

@@ -266,7 +266,6 @@ void DMA1_Channel1_IRQHandler(void)
     AdcDmaTransferError_Callback();
   }
   /* USER CODE END DMA1_Channel1_IRQn 0 */
-
   /* USER CODE BEGIN DMA1_Channel1_IRQn 1 */
 
   /* USER CODE END DMA1_Channel1_IRQn 1 */

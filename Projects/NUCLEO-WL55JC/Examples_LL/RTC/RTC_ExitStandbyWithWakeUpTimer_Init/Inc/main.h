@@ -87,6 +87,7 @@ void Error_Handler(void);
 #define NVIC_PRIORITYGROUP_4         ((uint32_t)0x00000003) /*!< 4 bits for pre-emption priority,
                                                                  0 bit  for subpriority */
 #endif
+
 /* USER CODE BEGIN Private defines */
 #define __LL_RTC_WAKEUPTIMER_EXTI_ENABLE_EVENT()    (EXTI->EMR1 |= EXTI_EMR1_EM20)
 #define __DBGMCU_EnableDBGStandbyMode()             SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_STANDBY)

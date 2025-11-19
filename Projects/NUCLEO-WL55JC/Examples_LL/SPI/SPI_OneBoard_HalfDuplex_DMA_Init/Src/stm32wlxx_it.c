@@ -240,7 +240,6 @@ void DMA1_Channel3_IRQHandler(void)
     SPI_TransferError_Callback();
   }
   /* USER CODE END DMA1_Channel3_IRQn 0 */
-
   /* USER CODE BEGIN DMA1_Channel3_IRQn 1 */
   /* USER CODE END DMA1_Channel3_IRQn 1 */
 }
@@ -264,7 +263,6 @@ void DMA2_Channel1_IRQHandler(void)
     SPI_TransferError_Callback();
   }
   /* USER CODE END DMA2_Channel1_IRQn 0 */
-
   /* USER CODE BEGIN DMA2_Channel1_IRQn 1 */
 
   /* USER CODE END DMA2_Channel1_IRQn 1 */

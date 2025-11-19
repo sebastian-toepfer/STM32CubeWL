@@ -1971,6 +1971,5 @@
 #include MBEDTLS_USER_CONFIG_FILE
 #endif
 
-#include "mbedtls/check_config.h"
 
 #endif /* MBEDTLS_CONFIG_H */

@@ -76,6 +76,7 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
 
   /* Compute TIM17 clock */
   uwTimclock = HAL_RCC_GetPCLK2Freq();
+
   /* Compute the prescaler value to have TIM17 counter clock equal to 1MHz */
   uwPrescalerValue = (uint32_t) ((uwTimclock / 1000000U) - 1U);
 
@@ -83,11 +84,11 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
   htim17.Instance = TIM17;
 
   /* Initialize TIMx peripheral as follow:
-  + Period = [(TIM17CLK/1000) - 1]. to have a (1/1000) s time base.
-  + Prescaler = (uwTimclock/1000000 - 1) to have a 1MHz counter clock.
-  + ClockDivision = 0
-  + Counter direction = Up
-  */
+   * Period = [(TIM17CLK/1000) - 1]. to have a (1/1000) s time base.
+   * Prescaler = (uwTimclock/1000000 - 1) to have a 1MHz counter clock.
+   * ClockDivision = 0
+   * Counter direction = Up
+   */
   htim17.Init.Period = (1000000U / 1000U) - 1U;
   htim17.Init.Prescaler = uwPrescalerValue;
   htim17.Init.ClockDivision = 0;
@@ -115,6 +116,7 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
       }
     }
   }
+
  /* Return function status */
   return status;
 }

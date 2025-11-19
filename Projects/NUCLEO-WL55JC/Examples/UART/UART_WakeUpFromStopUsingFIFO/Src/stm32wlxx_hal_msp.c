@@ -62,6 +62,7 @@
   */
 void HAL_MspInit(void)
 {
+
   /* USER CODE BEGIN MspInit 0 */
 
   /* USER CODE END MspInit 0 */
@@ -74,20 +75,21 @@ void HAL_MspInit(void)
 }
 
 /**
-* @brief UART MSP Initialization
-* This function configures the hardware resources used in this example
-* @param huart: UART handle pointer
-* @retval None
-*/
+  * @brief UART MSP Initialization
+  * This function configures the hardware resources used in this example
+  * @param huart: UART handle pointer
+  * @retval None
+  */
 void HAL_UART_MspInit(UART_HandleTypeDef* huart)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
   if(huart->Instance==LPUART1)
   {
-  /* USER CODE BEGIN LPUART1_MspInit 0 */
+    /* USER CODE BEGIN LPUART1_MspInit 0 */
 
-  /* USER CODE END LPUART1_MspInit 0 */
+    /* USER CODE END LPUART1_MspInit 0 */
+
   /** Initializes the peripherals clocks
   */
     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_LPUART1;
@@ -115,26 +117,27 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
     /* LPUART1 interrupt Init */
     HAL_NVIC_SetPriority(LPUART1_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(LPUART1_IRQn);
-  /* USER CODE BEGIN LPUART1_MspInit 1 */
+    /* USER CODE BEGIN LPUART1_MspInit 1 */
 
-  /* USER CODE END LPUART1_MspInit 1 */
+    /* USER CODE END LPUART1_MspInit 1 */
+
   }
 
 }
 
 /**
-* @brief UART MSP De-Initialization
-* This function freeze the hardware resources used in this example
-* @param huart: UART handle pointer
-* @retval None
-*/
+  * @brief UART MSP De-Initialization
+  * This function freeze the hardware resources used in this example
+  * @param huart: UART handle pointer
+  * @retval None
+  */
 void HAL_UART_MspDeInit(UART_HandleTypeDef* huart)
 {
   if(huart->Instance==LPUART1)
   {
-  /* USER CODE BEGIN LPUART1_MspDeInit 0 */
+    /* USER CODE BEGIN LPUART1_MspDeInit 0 */
 
-  /* USER CODE END LPUART1_MspDeInit 0 */
+    /* USER CODE END LPUART1_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_LPUART1_CLK_DISABLE();
 
@@ -146,9 +149,9 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* huart)
 
     /* LPUART1 interrupt DeInit */
     HAL_NVIC_DisableIRQ(LPUART1_IRQn);
-  /* USER CODE BEGIN LPUART1_MspDeInit 1 */
+    /* USER CODE BEGIN LPUART1_MspDeInit 1 */
 
-  /* USER CODE END LPUART1_MspDeInit 1 */
+    /* USER CODE END LPUART1_MspDeInit 1 */
   }
 
 }

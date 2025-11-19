@@ -64,8 +64,8 @@ static const uint8_t CRC7_DATA8_TEST17[17] = {0x12, 0x34, 0xBA, 0x71, 0xAD,
                                               0xEE, 0x4D, 0x82, 0x93, 0xA6,
                                               0x7F, 0xC3
                                              };
-static const uint8_t CRC7_DATA8_TEST1[1]   = {0x19};
-static const uint8_t CRC7_DATA8_TEST2[2]   = {0xAB, 0xCD};
+static const uint32_t CRC7_DATA8_TEST1[1]   = {0x00000019};
+static const uint32_t CRC7_DATA8_TEST2[2]   = {0x0000CDAB, 0x00000000};
 
 
 
@@ -94,6 +94,7 @@ static void MX_CRC_Init(void);
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* STM32WLxx HAL library initialization:
@@ -256,6 +257,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
   /** Configure the SYSCLKSource, HCLK, PCLK1 and PCLK2 clocks dividers
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK3|RCC_CLOCKTYPE_HCLK
@@ -323,8 +325,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.

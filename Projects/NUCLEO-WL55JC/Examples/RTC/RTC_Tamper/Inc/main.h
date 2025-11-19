@@ -59,6 +59,7 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define RTC_ASYNCH_PREDIV 0x7F
 #define RTC_SYNCH_PREDIV 0xFF
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

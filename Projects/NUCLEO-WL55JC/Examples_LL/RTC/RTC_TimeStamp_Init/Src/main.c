@@ -92,6 +92,7 @@ void     LED_Blinking(uint32_t Period);
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
   /* USER CODE END 1 */
 
@@ -230,6 +231,7 @@ static void MX_RTC_Init(void)
   LL_EXTI_EnableRisingTrig_0_31(LL_EXTI_LINE_13);
 
   /* USER CODE END RTC_Init 1 */
+
   /** Initialize RTC and set the Time and Date
   */
   RTC_InitStruct.HourFormat = LL_RTC_HOURFORMAT_24HOUR;
@@ -237,6 +239,7 @@ static void MX_RTC_Init(void)
   RTC_InitStruct.SynchPrescaler = RTC_SYNCH_PREDIV;
   LL_RTC_Init(RTC, &RTC_InitStruct);
   LL_RTC_SetBinaryMode(RTC, LL_RTC_BINARY_NONE);
+
   /** Initialize RTC and set the Time and Date
   */
   RTC_TimeStruct.Hours = 0x11;
@@ -266,6 +269,9 @@ static void MX_RTC_Init(void)
 static void MX_GPIO_Init(void)
 {
   LL_GPIO_InitTypeDef GPIO_InitStruct = {0};
+  /* USER CODE BEGIN MX_GPIO_Init_1 */
+
+  /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_GPIOB);
@@ -281,6 +287,9 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
   LL_GPIO_Init(LED2_GPIO_Port, &GPIO_InitStruct);
 
+  /* USER CODE BEGIN MX_GPIO_Init_2 */
+
+  /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
@@ -388,8 +397,7 @@ void Error_Handler(void)
   LED_Blinking(LED_BLINK_ERROR);
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.

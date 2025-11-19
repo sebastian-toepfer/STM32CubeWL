@@ -23,7 +23,7 @@
 #define __STM32WLxx_IT_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
 
 /* Private includes ----------------------------------------------------------*/
@@ -60,4 +60,3 @@ void TIM17_IRQHandler(void);
 #endif
 
 #endif /* __STM32WLxx_IT_H */
-

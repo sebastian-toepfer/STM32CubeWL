@@ -32,7 +32,7 @@
 #include "stm32_seq.h"
 #include "utilities_def.h"
 #include "sgfx_command.h"
-
+#include "flash_if.h"
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
@@ -65,6 +65,11 @@ extern RadioEvents_t RfApiRadioEvents;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+/**
+  * Temp buffer to store a FLASH page in RAM when partial replacement is needed
+  */
+static uint8_t FLASH_RAM_buffer[FLASH_IF_BUFFER_SIZE];
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -122,6 +127,11 @@ void Sigfox_Init(void)
   APP_PPRINTF("ATtention command interface\n\r");
 
   /* USER CODE END Sigfox_Init_1 */
+
+  if (FLASH_IF_Init(FLASH_RAM_buffer) != FLASH_IF_OK)
+  {
+    Error_Handler();
+  }
 
   sfx_rc = E2P_Read_Rc();
 

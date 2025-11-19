@@ -6,7 +6,7 @@
 
 <body style="font-size: 10pt; font-family: Verdana;">
 
-<h3 style="color: blue; text-decoration: underline;">STM32CubeWL Firmware Package v1.3.0 / 09-November-2022</h3>
+<h3 style="color: blue; text-decoration: underline;">STM32CubeWL Firmware Package v1.4.0 / 29-October-2025</h3>
 
 <div style="margin-left: 18pt;">
 <p>
@@ -17,67 +17,71 @@
 <b>CMSIS/LL/HAL Drivers updates:</b>
 </p>
 <p>
-- Maintenance to include latest corrections
+- Maintenance release to include latest corrections including the following IP drivers:
+ADC, RCC, HSEM, I2C, SUBGHZ, RTC, TIM, LPTIM, UART, USART, FLASH, SPI, DMA
 </p>
+<p>
+- Fix: STM32CubeIDE projects location of the .size directive in startup code
+</p>
+<p>
+- Fix: ROM symbol addresses in template files to use code region aliases
+</p>
+<p>
+- Feature: Allow redefinition of the macro VECT_TAB_OFFSET externally from the IDE, makefile, or command line
+</p>
+<p>
+- Fix of MISRAC2012 Rules 13.4_b, 12.3, 10.4 and 8.13 violations
+</p>
+  
 
 <p>
 <b>LoRaWAN Middleware updates:</b>
 </p>
 <p>
-- Feature: Integration of LoRaWAN Link Layer v1.0.4 + Regional Parameters RP002-1.0.1 from LoRa Mac Semtech/StackForce master branch (11-Jan-2022 commits from tag v4.6.0 + some fixes from latest master commits )
+- Fix: rebootTimeReq is based on GPS epoch, convert to Unix epoch
 </p>
 <p>
-- Support of AS923-4 from RP002-1.0.3
+- Fix: LCTT Test BV_015_A for CHANNEL_PLAN_GROUP_AS923_1_JP_CH24_CH38_LBT test due to allowed data rate mismatch
 </p>
 <p>
-- Feature: Support of RU864-870 16 channels from Regional Parameters RP002-1.0.2
+- Fix: Backoff Algorithm issue (patch from Semtech Github #1399)
 </p>
 <p>
-- Feature: LoRaWAN FUOTA packages v2.0.0 integration
+- Fix: Fixed typo in comments and channel plan name (From CH37 to CH33) for AS923_1 with LBT and DC
 </p>
-<p>
-- Feature: LoRaWAN Key Provisioning: Join EUI/Dev EUI/Dev Address with KMS
-</p>
-<p>
-- Feature: Set Tx power before join overridden by Mac
-</p>
-<p>
-- Fix: EIRP default configuration(AS923 JP channel plan) needs to be corrected, 13.0 -> 16.0
-</p>
-
-<p>
-<b>LoRaWAN SubGHz Physical Layer Middleware updates:</b>
-</p>
-<p>
-- Feature: 169MHz validation support
-</p>
-<p>
-- Feature: Add LoRa-E support (LR-FHSS)
-</p>
-<p>
-- Feature: RF output optimization
-</p>
-<p>
-- Chore: Sync Word register addresses not matching Semtech SX1261/2 datasheet
-</p>
-<p>
-- Fix: SUBGHz GCFO registers not in line with the RM
-</p>
-<p>
-- Fix: AGC of radio stuck when jammed
-</p>
-
 <p>
 <b>Security Middleware updates:</b>
 </p>
 <p>
-- KMS: Secure counters
+- Migrate to MbedTLS V3.6.4
 </p>
 <p>
-- KMS: Give possibility to encrypt the blob objects in NVM
+- Migrate to STM32 Key Management Services V1.2.3
 </p>
-
-
+<p>
+- Migrate to STM32_Secure_Engine V2.5.4
+</p>
+<p>
+- Migrate to FreeRTOS V10.6.2
+</p>
+<p>
+<b>Projects updates:</b>
+</p>
+<p>
+- SLA0044 Legal terms updated to latest revision (Rev 6 / October 2025)
+</p>
+<p>
+- Project alignment to STM32CubeMX V6.16.0
+</p>
+<p>
+- Project alignment to updated FreeRTOS and MbedTLS versions
+</p>
+<p>
+<b>Package updates:</b>
+</p>
+<p>  
+- SLA0048 Legal terms updated to latest revision (Rev 5 / October 2025)
+</p>
 </div>
 </body>
 </html>

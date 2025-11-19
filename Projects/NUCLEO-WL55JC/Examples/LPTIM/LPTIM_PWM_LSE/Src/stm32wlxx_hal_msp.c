@@ -63,6 +63,7 @@
   */
 void HAL_MspInit(void)
 {
+
   /* USER CODE BEGIN MspInit 0 */
 
   /* USER CODE END MspInit 0 */
@@ -75,18 +76,18 @@ void HAL_MspInit(void)
 }
 
 /**
-* @brief LPTIM MSP Initialization
-* This function configures the hardware resources used in this example
-* @param hlptim: LPTIM handle pointer
-* @retval None
-*/
+  * @brief LPTIM MSP Initialization
+  * This function configures the hardware resources used in this example
+  * @param hlptim: LPTIM handle pointer
+  * @retval None
+  */
 void HAL_LPTIM_MspInit(LPTIM_HandleTypeDef* hlptim)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
   if(hlptim->Instance==LPTIM1)
   {
-  /* USER CODE BEGIN LPTIM1_MspInit 0 */
+    /* USER CODE BEGIN LPTIM1_MspInit 0 */
 
     /* Force the LPTIM1 Periheral Clock Reset */
     __HAL_RCC_LPTIM1_FORCE_RESET();
@@ -94,7 +95,8 @@ void HAL_LPTIM_MspInit(LPTIM_HandleTypeDef* hlptim)
     /* Release the LPTIM1 Periheral Clock Reset */  
     __HAL_RCC_LPTIM1_RELEASE_RESET();
 
-  /* USER CODE END LPTIM1_MspInit 0 */
+    /* USER CODE END LPTIM1_MspInit 0 */
+
   /** Initializes the peripherals clocks
   */
     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_LPTIM1;
@@ -118,24 +120,25 @@ void HAL_LPTIM_MspInit(LPTIM_HandleTypeDef* hlptim)
     GPIO_InitStruct.Alternate = GPIO_AF1_LPTIM1;
     HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-  /* USER CODE BEGIN LPTIM1_MspInit 1 */
+    /* USER CODE BEGIN LPTIM1_MspInit 1 */
 
-  /* USER CODE END LPTIM1_MspInit 1 */
+    /* USER CODE END LPTIM1_MspInit 1 */
+
   }
 
 }
 
 /**
-* @brief LPTIM MSP De-Initialization
-* This function freeze the hardware resources used in this example
-* @param hlptim: LPTIM handle pointer
-* @retval None
-*/
+  * @brief LPTIM MSP De-Initialization
+  * This function freeze the hardware resources used in this example
+  * @param hlptim: LPTIM handle pointer
+  * @retval None
+  */
 void HAL_LPTIM_MspDeInit(LPTIM_HandleTypeDef* hlptim)
 {
   if(hlptim->Instance==LPTIM1)
   {
-  /* USER CODE BEGIN LPTIM1_MspDeInit 0 */
+    /* USER CODE BEGIN LPTIM1_MspDeInit 0 */
     RCC_OscInitTypeDef RCC_OscInitStruct;
     RCC_PeriphCLKInitTypeDef RCC_PeriphCLKInitStruct;
 
@@ -158,7 +161,7 @@ void HAL_LPTIM_MspDeInit(LPTIM_HandleTypeDef* hlptim)
     /* Release the LPTIM1 Periheral Clock Reset */  
     __HAL_RCC_LPTIM1_RELEASE_RESET();
 
-  /* USER CODE END LPTIM1_MspDeInit 0 */
+    /* USER CODE END LPTIM1_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_LPTIM1_CLK_DISABLE();
 
@@ -167,9 +170,9 @@ void HAL_LPTIM_MspDeInit(LPTIM_HandleTypeDef* hlptim)
     */
     HAL_GPIO_DeInit(GPIOC, GPIO_PIN_1);
 
-  /* USER CODE BEGIN LPTIM1_MspDeInit 1 */
+    /* USER CODE BEGIN LPTIM1_MspDeInit 1 */
 
-  /* USER CODE END LPTIM1_MspDeInit 1 */
+    /* USER CODE END LPTIM1_MspDeInit 1 */
   }
 
 }

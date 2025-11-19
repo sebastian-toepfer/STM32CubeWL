@@ -15,7 +15,7 @@
           <Vendor>STMicroelectronics</Vendor>
           <PackID>Keil.STM32WLxx_DFP.1.0.5</PackID>
           <PackURL>http://www.keil.com/pack</PackURL>
-          <Cpu>IRAM(0x20000000-0x2000FFFF) IROM(0x8000000-0x803FFFF) CLOCK(12000000) FPU2 CPUTYPE("Cortex-M4") TZ</Cpu>
+          <Cpu>IRAM(0x20000000-0x20003FFF) IRAM2(0x20008000-0x2000BFFF) IROM(0x8000000-0x801FFFF)  CLOCK(12000000) FPU2 CPUTYPE("Cortex-M4") TZ</Cpu>
           <FlashUtilSpec />
           <StartupFile />
           <FlashDriverDll />
@@ -336,7 +336,7 @@
               <MiscControls />
               <Define>MBEDTLS_CONFIG_FILE=&lt;mbedtls_config.h&gt;,KMS_ENABLED,CORE_CM4,USE_HAL_DRIVER,STM32WL55xx</Define>
               <Undefine />
-              <IncludePath>../Inc;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc/Legacy;../../../../../../Drivers/CMSIS/Device/ST/STM32WLxx/Include;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Core;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Modules;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Interface;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Interface/CryptoApi;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Interface/CryptoApi/HAL;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Interface/CryptoApi/MBED;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Interface/CryptoApi/ST;../../../../../../Middlewares/ST/STM32_Key_Management_Services/niKMS;../../../../../../Middlewares/Third_Party/mbed-crypto/include;../../../../../../Middlewares/Third_Party/mbed-crypto/include/mbedtls;../../../../../../Middlewares/Third_Party/mbed-crypto/include/psa;../../../../../../Drivers/CMSIS/Include;../../../../../../Drivers/BSP/STM32WLxx_Nucleo</IncludePath>
+              <IncludePath>../Inc;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc/Legacy;../../../../../../Drivers/CMSIS/Device/ST/STM32WLxx/Include;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Core;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Modules;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Interface;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Interface/CryptoApi;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Interface/CryptoApi/HAL;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Interface/CryptoApi/MBED;../../../../../../Middlewares/ST/STM32_Key_Management_Services/Interface/CryptoApi/ST;../../../../../../Middlewares/ST/STM32_Key_Management_Services/niKMS;../../../../../../Middlewares/Third_Party/mbed-crypto/include;../../../../../../Middlewares/Third_Party/mbed-crypto/include/mbedtls;../../../../../../Middlewares/Third_Party/mbed-crypto/library;../../../../../../Middlewares/Third_Party/mbed-crypto/include/psa;../../../../../../Drivers/CMSIS/Include;../../../../../../Drivers/BSP/STM32WLxx_Nucleo</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

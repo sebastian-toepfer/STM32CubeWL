@@ -111,6 +111,7 @@ extern void initialise_monitor_handles(void);
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 #if defined(__GNUC__) && !defined(__ARMCC_VERSION)
   initialise_monitor_handles();
@@ -323,6 +324,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
   /** Configure the SYSCLKSource, HCLK, PCLK1 and PCLK2 clocks dividers
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK3|RCC_CLOCKTYPE_HCLK
@@ -472,6 +474,29 @@ static void Display_EncryptedData(uint8_t mode, uint16_t keysize, uint32_t datal
   }
 }
 
+#if (USE_VCP_CONNECTION == 1)
+/**
+  * @brief  Retargets the C library printf function to the USARTx.
+  * @param  ch: character to send
+  * @param  f: pointer to file (not used)
+  * @retval The character transmitted
+  */
+#if defined(__GNUC__) && !defined(__ARMCC_VERSION)
+/* With GCC, small printf (option LD Linker->Libraries->Small printf
+   set to 'Yes') calls __io_putchar() */
+int __io_putchar(int ch)
+#else
+int fputc(int ch, FILE *f)
+#endif /* __GNUC__ */
+{
+  /* Place your implementation of fputc here */
+  /* e.g. write a character to the EVAL_COM1 and Loop until the end of transmission */
+  HAL_UART_Transmit(&UartHandle, (uint8_t *)&ch, 1, UART_TIMEOUT_VALUE);
+
+  return ch;
+}
+#endif
+
 /**
   * @brief  Display Decrypted Data
   * @param  mode: chaining mode
@@ -535,8 +560,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.

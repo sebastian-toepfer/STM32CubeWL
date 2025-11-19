@@ -150,6 +150,7 @@ typedef enum
   * @{
   */
 #define SD_DUMMY_BYTE            0xFFU
+#define SD_DUMMY_HALFWORD      0xFFFFU
 #define SD_CMD_LENGTH               6U
 #define SD_MAX_TRY                100U    /* Number of try */
 
@@ -317,7 +318,7 @@ int32_t ADAFRUIT_802_SD_ReadBlocks(uint32_t Instance, uint32_t *pData, uint32_t 
 {
   int32_t ret = BSP_ERROR_NONE;
   uint32_t response, offset = 0, blocks_nbr = BlocksNbr;
-  uint8_t tmp;
+  uint8_t tmp = SD_DUMMY_BYTE;
 
   if(Instance >= SD_INSTANCES_NBR)
   {
@@ -352,7 +353,7 @@ int32_t ADAFRUIT_802_SD_ReadBlocks(uint32_t Instance, uint32_t *pData, uint32_t 
         {
           /* Send CMD17 (SD_CMD_READ_SINGLE_BLOCK) to read one block */
           /* Check if the SD acknowledged the read block command: R1 response (0x00: no errors) */
-          response = SD_SendCmd(SD_CMD_READ_SINGLE_BLOCK, (BlockIdx + offset) * ((CardType == ADAFRUIT_802_CARD_SDHC) ? 1U: ADAFRUIT_SD_BLOCK_SIZE), 0xFFU, (uint8_t)SD_ANSWER_R1_EXPECTED);
+          response = SD_SendCmd(SD_CMD_READ_SINGLE_BLOCK, (BlockIdx + (offset/ADAFRUIT_SD_BLOCK_SIZE)) * ((CardType == ADAFRUIT_802_CARD_SDHC) ? 1U: ADAFRUIT_SD_BLOCK_SIZE), 0xFFU, (uint8_t)SD_ANSWER_R1_EXPECTED);
           if ((uint8_t)(response & 0xFFU) != (uint8_t)SD_R1_NO_ERROR)
           {
             /* Send dummy byte: 8 Clock pulses of delay */
@@ -1388,6 +1389,7 @@ static int32_t SD_GoIdleState(void)
   uint32_t response;
   __IO uint8_t counter = 0;
   uint8_t tmp = SD_DUMMY_BYTE;
+  uint16_t tmp1 = SD_DUMMY_HALFWORD;
 
   /* Send CMD0 (SD_CMD_GO_IDLE_STATE) to put SD in SPI mode and
   wait for In Idle State Response (R1 Format) equal to 0x01 */
@@ -1396,7 +1398,7 @@ static int32_t SD_GoIdleState(void)
     counter++;
     response = SD_SendCmd(SD_CMD_GO_IDLE_STATE, 0U, 0x95U, (uint8_t)SD_ANSWER_R1_EXPECTED);
     SD_IO_CSState(1);
-    if(BUS_SPIx_Send(&tmp, 2U) != BSP_ERROR_NONE)
+    if(BUS_SPIx_Send((uint8_t*)&tmp1, 2U) != BSP_ERROR_NONE)
     {
       return BSP_ERROR_PERIPH_FAILURE;
     }

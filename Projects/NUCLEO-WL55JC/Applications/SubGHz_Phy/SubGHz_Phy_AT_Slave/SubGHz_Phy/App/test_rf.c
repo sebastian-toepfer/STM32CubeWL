@@ -501,7 +501,7 @@ int32_t TST_RX_Start(int32_t nb_packet)
       {
         count_RxKo++;
       }
-      if (RadioRxDone_flag == 1)
+      if ((RadioRxDone_flag == 1) && (RadioError_flag != 1))
       {
         count_RxOk++;
       }

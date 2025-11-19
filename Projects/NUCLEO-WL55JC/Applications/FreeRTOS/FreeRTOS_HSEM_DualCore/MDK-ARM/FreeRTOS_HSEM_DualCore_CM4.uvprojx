@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>CORE_CM4,USE_HAL_DRIVER,STM32WL55xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../CM4/Inc;../../../../../../Drivers/BSP/STM32WLxx_Nucleo;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc/Legacy;../../../../../../Drivers/CMSIS/Device/ST/STM32WLxx/Include;../../../../../../Drivers/CMSIS/Include;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/include;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3</IncludePath>
+              <IncludePath>../CM4/Inc;../../../../../../Drivers/BSP/STM32WLxx_Nucleo;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc/Legacy;../../../../../../Drivers/CMSIS/Device/ST/STM32WLxx/Include;../../../../../../Drivers/CMSIS/RTOS2/Include;../../../../../../Drivers/CMSIS/Include;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/include;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

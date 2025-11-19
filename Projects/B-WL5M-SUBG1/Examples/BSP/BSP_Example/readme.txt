@@ -1,12 +1,13 @@
 /**
-  @page BSP_Example  Description of the BSP example
+  @page BSP_Example Description of the BSP example
   
   @verbatim
   ******************************************************************************
-  * @file    BSP/BSP_Example/readme.txt 
+  * @file    BSP/BSP_Example/readme.txt
   * @author  MCD Application Team
   * @brief   Description of the BSP example.
   ******************************************************************************
+  * @attention
   *
   * Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.
@@ -39,8 +40,7 @@ This example shows how to use turn on/off and toggle the LEDs.
 This example shows how to Read/Write to the SPI external flash.
 
 ### TEMPERATURE ###
-This example shows how to use the sensors to get temperature values. Both, 
-STTS22H and LPS22HB sensors are used. 
+This example shows how to use the STTS22H sensor to get temperature values.
 
 ### GYROSCOPE ###
 This example shows how to use the ISM330DHCX sensor to get gyroscope values.
@@ -77,8 +77,8 @@ in enabling USE_VCP_CONNECTION compilation switch and with the proper configurat
 
 @par Keywords
 
-BSP, Led, Flash, Memory, SPI, Humidity, Button, Temperature, Sensor,
-Accelerometer, STTS22H, ISM330DHCX.
+BSP, Led, Flash, Memory, SPI, Button, Temperature, Sensor,
+Accelerometer, Giroscope, STTS22H, ISM330DHCX.
 
 @par Directory contents 
 
@@ -87,7 +87,7 @@ Accelerometer, STTS22H, ISM330DHCX.
   - BSP/Src/stm32wbxx_it.c                Interrupt handlers
   - BSP/Src/flash.c                       Tests of Read/Write to external flash
   - BSP/Src/led.c                         Tests of Turn on/off or toggle the LEDs
-  - BSP/Src/sensors.c                     Tests of stts22h, iis2mdc, ism330dhcx and lps22hh sensors
+  - BSP/Src/sensors.c                     Tests of stts22h, iis2mdc and ism330dhcx sensors
   - BSP/Src/radio.c                       Tests of Radio
   - BSP/Inc/main.h                        Main program header file  
   - BSP/Inc/stm32wlxx_hal_conf.h          HAL Configuration file

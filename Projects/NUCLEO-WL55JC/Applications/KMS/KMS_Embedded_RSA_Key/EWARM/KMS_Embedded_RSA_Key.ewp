@@ -215,7 +215,7 @@
         </option>
         <option>
           <name>CCDefines</name>
-          <state>MBEDTLS_CONFIG_FILE="mbedtls_config.h"</state>
+          <state>MBEDTLS_CONFIG_FILE="$PROJ_DIR$\..\Inc\mbedtls_config.h"</state>
           <state>KMS_ENABLED</state>
           <state>CORE_CM4</state>
           <state>USE_HAL_DRIVER</state>
@@ -359,6 +359,7 @@
           <state>$PROJ_DIR$/../../../../../../Middlewares/ST/STM32_Key_Management_Services/niKMS</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/mbed-crypto/include</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/mbed-crypto/include/mbedtls</state>
+          <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/mbed-crypto/library</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/mbed-crypto/include/psa</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Include</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/BSP/STM32WLxx_Nucleo</state>

@@ -64,6 +64,7 @@ __IO uint32_t alarmFlag;
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
   /* STM32WLxx HAL library initialization:
        - Configure the Flash prefetch
@@ -163,6 +164,7 @@ void MX_RTC_Init(void)
   /* USER CODE BEGIN RTC_Init 1 */
 
   /* USER CODE END RTC_Init 1 */
+
   /** Initialize RTC Only
   */
   hrtc.Instance = RTC;
@@ -204,6 +206,7 @@ void MX_RTC_Init(void)
   {
     Error_Handler();
   }
+
   /** Enable the Alarm A
   */
   sAlarm.AlarmTime.Hours = 0x0;
@@ -257,8 +260,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.

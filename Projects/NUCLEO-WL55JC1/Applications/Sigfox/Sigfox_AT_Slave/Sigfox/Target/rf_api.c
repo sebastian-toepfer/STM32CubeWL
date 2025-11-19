@@ -503,7 +503,7 @@ sfx_u8 RF_API_wait_for_clear_channel(sfx_u8 cs_min, sfx_s8 cs_threshold, sfx_rx_
 
   HAL_Delay(Radio.GetWakeupTime());
 
-  lbt_threshold_cal =  E2P_Read_RssiCal();
+  lbt_threshold_cal = E2P_Read_RssiCal();
   cs_threshold += lbt_threshold_cal;
   APP_LOG(TS_ON, VLEVEL_M, "CS start cs_min=%dms, cs_threshold=%dBm\n\r", cs_min, cs_threshold);
 

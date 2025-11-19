@@ -61,6 +61,7 @@
   */
 void HAL_MspInit(void)
 {
+
   /* USER CODE BEGIN MspInit 0 */
 
   /* USER CODE END MspInit 0 */
@@ -73,18 +74,18 @@ void HAL_MspInit(void)
 }
 
 /**
-* @brief IPCC MSP Initialization
-* This function configures the hardware resources used in this example
-* @param hipcc: IPCC handle pointer
-* @retval None
-*/
+  * @brief IPCC MSP Initialization
+  * This function configures the hardware resources used in this example
+  * @param hipcc: IPCC handle pointer
+  * @retval None
+  */
 void HAL_IPCC_MspInit(IPCC_HandleTypeDef* hipcc)
 {
   if(hipcc->Instance==IPCC)
   {
-  /* USER CODE BEGIN IPCC_MspInit 0 */
+    /* USER CODE BEGIN IPCC_MspInit 0 */
 
-  /* USER CODE END IPCC_MspInit 0 */
+    /* USER CODE END IPCC_MspInit 0 */
     /* Peripheral clock enable */
     __HAL_RCC_IPCC_CLK_ENABLE();
     /* IPCC interrupt Init */
@@ -92,35 +93,36 @@ void HAL_IPCC_MspInit(IPCC_HandleTypeDef* hipcc)
     HAL_NVIC_EnableIRQ(IPCC_C1_RX_IRQn);
     HAL_NVIC_SetPriority(IPCC_C1_TX_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(IPCC_C1_TX_IRQn);
-  /* USER CODE BEGIN IPCC_MspInit 1 */
+    /* USER CODE BEGIN IPCC_MspInit 1 */
 
-  /* USER CODE END IPCC_MspInit 1 */
+    /* USER CODE END IPCC_MspInit 1 */
+
   }
 
 }
 
 /**
-* @brief IPCC MSP De-Initialization
-* This function freeze the hardware resources used in this example
-* @param hipcc: IPCC handle pointer
-* @retval None
-*/
+  * @brief IPCC MSP De-Initialization
+  * This function freeze the hardware resources used in this example
+  * @param hipcc: IPCC handle pointer
+  * @retval None
+  */
 void HAL_IPCC_MspDeInit(IPCC_HandleTypeDef* hipcc)
 {
   if(hipcc->Instance==IPCC)
   {
-  /* USER CODE BEGIN IPCC_MspDeInit 0 */
+    /* USER CODE BEGIN IPCC_MspDeInit 0 */
 
-  /* USER CODE END IPCC_MspDeInit 0 */
+    /* USER CODE END IPCC_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_IPCC_CLK_DISABLE();
 
     /* IPCC interrupt DeInit */
     HAL_NVIC_DisableIRQ(IPCC_C1_RX_IRQn);
     HAL_NVIC_DisableIRQ(IPCC_C1_TX_IRQn);
-  /* USER CODE BEGIN IPCC_MspDeInit 1 */
+    /* USER CODE BEGIN IPCC_MspDeInit 1 */
 
-  /* USER CODE END IPCC_MspDeInit 1 */
+    /* USER CODE END IPCC_MspDeInit 1 */
   }
 
 }

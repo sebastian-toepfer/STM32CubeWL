@@ -21,7 +21,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "main.h"
-#include "cmsis_os.h"
+#include "cmsis_os2.h"
 
 #include "app_lorawan.h"
 
@@ -94,7 +94,7 @@ void StartDefaultTask(void *argument);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* USER CODE BEGIN PREPOSTSLEEP */
-void PreSleepProcessing(uint32_t *ulExpectedIdleTime)
+void PreSleepProcessing(uint32_t ulExpectedIdleTime)
 {
   /* Called by the kernel before it places the MCU into a sleep mode because
   configPRE_SLEEP_PROCESSING() is #defined to PreSleepProcessing().
@@ -104,7 +104,7 @@ void PreSleepProcessing(uint32_t *ulExpectedIdleTime)
   on again in the post sleep processing function.  For maximum power saving
   ensure all unused pins are in their lowest power state. */
 
-  uint32_t WakeUpTimer_timeOut_ms = app_freertos_tick_to_ms((*ulExpectedIdleTime) * CORE_TICK_RATE);
+  uint32_t WakeUpTimer_timeOut_ms = app_freertos_tick_to_ms((ulExpectedIdleTime) * CORE_TICK_RATE);
 
   UTIL_TIMER_SetPeriod(&WakeUpTimer, WakeUpTimer_timeOut_ms);
   UTIL_TIMER_Start(&WakeUpTimer);
@@ -113,17 +113,10 @@ void PreSleepProcessing(uint32_t *ulExpectedIdleTime)
   /*Stop the systick here so that it stops even in sleep mode*/
   portNVIC_SYSTICK_CTRL_REG &= ~portNVIC_SYSTICK_ENABLE_BIT;
 
-    /*
-    (*ulExpectedIdleTime) is set to 0 to indicate that PreSleepProcessing contains
-    its own wait for interrupt or wait for event instruction and so the kernel vPortSuppressTicksAndSleep
-    function does not need to execute the wfi instruction
-  */
-  *ulExpectedIdleTime = 0;
-
   UTIL_LPM_EnterLowPower();
 }
 
-void PostSleepProcessing(uint32_t *ulExpectedIdleTime)
+void PostSleepProcessing(uint32_t ulExpectedIdleTime)
 {
   /* Called by the kernel when the MCU exits a sleep mode because
   configPOST_SLEEP_PROCESSING is #defined to PostSleepProcessing(). */
@@ -242,3 +235,4 @@ static uint32_t app_freertos_tick_to_ms(uint32_t tick)
   return ms;
 }
 /* USER CODE END Application */
+

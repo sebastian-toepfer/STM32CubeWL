@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>MBEDTLS_CONFIG_FILE=&lt;mbedtls_config.h&gt;,CORE_CM4,USE_HAL_DRIVER,STM32WL55xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc/Legacy;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/include;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../../../../../../Drivers/CMSIS/Device/ST/STM32WLxx/Include;../../../../../../Drivers/CMSIS/Include;../../../../../../Drivers/BSP/STM32WLxx_Nucleo;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3</IncludePath>
+              <IncludePath>../Inc;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc;../../../../../../Drivers/STM32WLxx_HAL_Driver/Inc/Legacy;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/include;../../../../../../Drivers/CMSIS/Device/ST/STM32WLxx/Include;../../../../../../Drivers/CMSIS/RTOS2/Include;../../../../../../Drivers/CMSIS/Include;../../../../../../Drivers/BSP/STM32WLxx_Nucleo;../../../../../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

@@ -59,6 +59,7 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+
 /* USER CODE BEGIN Private defines */
 /*## Compute the prescaler value, to have TIM1Freq = 1000000 Hz
  * TIM1 input clock (TIM1CLK) is set to APB2 clock (PCLK2), since APB2
